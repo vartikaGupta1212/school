@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Subjects{% endblock %}
+{% block body %}
+
+<div class="  my-4 mx-5 p-5 text-capitalize" style=" background:white;"> 
+    <h5>Subjects</h5>
+    <div class="card">
+        
+{% for i in sub %}
+    <div class="card-body">
+        <h6 class="card-header"><a  class="text-dark text-capitalize" style="text-decoration:none;" href="{% url 'subject' i %}">{{i}}</a></h6>
+    </div>   
+{% endfor %}
+    </div>
+</div>
+
+{% endblock %}

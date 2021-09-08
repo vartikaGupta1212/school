@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static }
+{% block title %}Upload{% endblock %}
+
+{% block body %}
+
+
+
+<div class=" my-4 mx-5 p-5 " style=" background:white; " > 
+    <div class="container"></div>
+        <form action="{% url 'upload_file' user_name %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <br>
+            <div class="form-group">
+                <input type="file" name="filename" id="filechoose" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1" >Subject</label>
+                <input type="text" class="form-control" name="title" id="exampleFormControlInput1" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1" >Chapter</label>
+                <textarea class="form-control" name="desc" id="exampleFormControlTextarea1" rows="2" required></textarea>
+            </div>
+
+            <input type="submit" value="Upload" class="btn btn-outline-primary">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
